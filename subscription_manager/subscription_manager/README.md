@@ -10,7 +10,17 @@ Flutter로 만든 구독 서비스 관리 앱입니다. 넷플릭스, 유튜브 
 - '갱신하기'로 다음 결제일 자동 계산
 - 서버 없이 기기 로컬(SharedPreferences)에 데이터 저장
 
-## 실행 방법
+## 컴퓨터에 Flutter를 설치하지 않고 APK 만들기 (GitHub Actions)
+
+이 프로젝트에는 `.github/workflows/build.yml`이 이미 포함되어 있어서, GitHub에 코드를 올리기만 하면 GitHub의 서버가 대신 Flutter를 설치하고 APK를 빌드해줍니다.
+
+1. [github.com](https://github.com)에서 새 저장소(Repository)를 만듭니다. Public이든 Private이든 상관없습니다.
+2. 이 폴더 전체(압축 푼 subscription_manager 폴더)를 그 저장소에 업로드합니다. GitHub 웹사이트에서 "uploading an existing file" 링크로 파일을 드래그해서 올려도 되고, git 명령어에 익숙하다면 `git init`, `git add .`, `git commit`, `git push`로 올려도 됩니다.
+3. 저장소 상단의 **Actions** 탭을 클릭합니다. 코드가 올라가는 순간 자동으로 "Build APK" 워크플로가 시작됩니다. (탭에 아무것도 안 뜨면 좌측에서 "Build APK" 워크플로를 선택하고 우측의 "Run workflow" 버튼을 눌러 수동으로 실행할 수 있습니다.)
+4. 빌드는 보통 3~5분 정도 걸립니다. 초록색 체크 표시가 뜨면 완료된 것입니다. 그 실행 기록을 클릭하고 페이지 아래쪽 **Artifacts** 항목에서 `app-release-apk`를 다운로드하면 zip 안에 APK 파일이 들어 있습니다.
+5. 그 apk 파일을 폰으로 옮겨서 설치하면 됩니다. (폰에서 "출처를 알 수 없는 앱 설치 허용"을 한 번 켜야 설치가 진행됩니다.)
+
+## 실행 방법 (컴퓨터에 직접 설치하는 경우)
 
 1. [Flutter SDK](https://docs.flutter.dev/get-started/install)가 설치되어 있어야 합니다. 터미널에서 `flutter --version`으로 설치를 확인하세요.
 
